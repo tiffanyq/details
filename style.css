@@ -33,6 +33,7 @@ video {
 h2 {
   font-size: 28px;
   line-height: 28px;
+  font-weight: 400;
 }
 
 a {
@@ -169,6 +170,7 @@ body {
 
 #outside-quiz {
   margin-top: 16px;
+  margin-bottom: 36px;
   float: right;
 }
 
