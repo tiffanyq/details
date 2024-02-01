@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>details</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫶</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="content.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <!-- Google tag (gtag.js) --> <!-- to count page views -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7PF0CLV6SC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7PF0CLV6SC');
+  </script>
+  <body>
+    <div id="body-container">
+        <video id="video-background" playsinline autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+        </video>
+        <div id="controls">
+          <button id="music-button" aria-label="turn music on">
+              <span class="material-symbols-outlined">
+                  music_off
+                  </span>
+          </button>
+            <button id="credits-button">credits</button>
+        </div>
+        <div id="credits" class="credits-element">
+          <p class="credits-element">made by <a class="credits-element" href="https://www.instagram.com/anotherbrowsertab" target="_blank">anotherbrowsertab</a>
+          // music by Monica Xu / 2KAI music <a href="https://www.instagram.com/2kaimusic/" target="_blank">@2kaimusic</a>  //  details and photos from tiff's life</p>
+        </div>
+      <div id="quiz-container">
+          <div id="counter" class="fade-three"><span id="count-number">0</span>/10</div>
+        <div id="quiz">
+          <div id = "quiz-start">
+            <h2 class="fade-zero">the details of your life</h2>
+            <img src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+            <p class="fade-one">
+              answer these 10 questions as closely as possible to the details of your life.
+              <br><br>
+              then share your quiz to see if people can guess your answers!
+            </p>
+          </div>
+          <div id = "quiz-start-sent-link">
+              <h2 class="fade-zero">the details of <span class="sender-name"></span> life</h2>
+              <img src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+              <p class="fade-one"> can you guess <span class="sender-name"></span> answers correctly?</p>
+          </div>
+          <div id ="enter-name" class="fade-static-one">
+            your name:
+            <input id="name-field">
+          </div>
+          <div id = "quiz-play">
+            <img id = "q-image"/>
+            <p id = "q-description" class="question-text"></p>
+            <span id="choice-label" class="choice-label-style"><span class="sender-name self-name">your</span> answer:</span>
+            <button id = "choice0" class = "select-row">
+            </button> 
+            <button id = "choice1" class = "select-row">
+            </button>
+          </div>
+          
+          <div id = "quiz-end-copy">
+            <h2 class="fade-zero">done!</h2>
+            <span class="fade-one">copy and send this link:</span>
+            <div class="fade-two">
+                <span id="copy-tray">
+                    <input type="text" id="link-to-copy" name="link-to-copy" value="tiffanyq.github.io/details"  aria-label="Link to send to recipient" readonly>
+                </span>
+            </div>
+          </div>
+          <div id = "quiz-end-results">
+            <h2 class="fade-zero">check answers</h2>
+            <div id="compare-questions"></div>
+            <h2>you got <span id="final-score"><span id="num-correct-answers"></span>/10</span> details of <span class="sender-name"></span> life correct! <3</h2>
+            <img src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+            <h2 style="text-align: center">🐝🌸🫶💌🎉🌿💫</h2>
+          </div>
+        </div>
+        <div id="outside-quiz">
+          <button id="start-button"><span class="fade-static-two">start</span></button>
+          <button id="enter-name-next-button"><span>next</span></button>
+          <button id="next-button"><span>next</span></button>
+          <button id="restart-button"><span class="fade-two">restart</span></button>
+        </div>
+    </div>
+  </div>
+  </body>
+</html>
