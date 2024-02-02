@@ -2,7 +2,7 @@ const BASE_URL = "tiffanyq.github.io/details?"
 const NUM_QUESTIONS = 10;
 const MIN_EMOJI_SIZE = 10;
 const EMOJI_MULTIPLIER = 28;
-const EMOJIS = ["🐝","🌸","🫶","💌","🎉","🌿","💫"];
+const EMOJIS = ["🐝","🌸","🫶","🦋","🎉","🌿","💫"];
 
 let tracking = {
   name: "",
@@ -14,6 +14,7 @@ let tracking = {
 let fillInForSelf;
 let senderName;
 let answerKey;
+let music;
 
 function generateURLToCopy() {
   let tempURL = BASE_URL;
@@ -76,6 +77,10 @@ window.addEventListener("load", function(event) {
     fillInForSelf = true;
     document.getElementById("quiz-start").style.display = "block"; // get correct start screen
   }
+
+  // music
+  music = new Audio('music.mp3');
+  music.loop = true;
 });
 
 /* starts quiz when "next" is selected */
@@ -428,10 +433,12 @@ function toggleMusic() {
     mn.innerText = "music_note";
     mn.classList.add("music-on");
     mb.ariaLabel = "turn music off";
+    music.play();
   } else {
     mn.innerText = "music_off";
     mn.classList.remove("music-on");
     mb.ariaLabel = "turn music on";
+    music.pause();
   }
 }
 

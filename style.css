@@ -28,6 +28,11 @@ video {
   z-index: 2;
   display: none;
   width: 240px;
+  font-size: 14px;
+}
+
+.details {
+  width: 120px;
 }
 
 h2 {
@@ -100,6 +105,11 @@ body {
 
 .choice-label-style {
   color: #959faa;
+  font-style: italic;
+}
+
+.instruction-text {
+  background-color: #d0eaff;
   font-style: italic;
 }
 
