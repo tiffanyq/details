@@ -43,11 +43,13 @@
           <br>music: monica <a href="https://www.instagram.com/2kaimusic/" target="_blank">@2kaimusic</a> <br>details & photos: tiff's life</p>
         </div>
       <div id="quiz-container">
-          <div id="counter" class="fade-three"><span id="count-number">0</span>/10</div>
+          <div id="counter" class="fade-three"><span id="count-number">0</span>/10 - <span id="q-title"></span></div>
         <div id="quiz">
           <div id = "quiz-start">
             <h2 class="fade-zero">the details of your life</h2>
-            <img class="details" src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+            <span class="peek-a-pooh-container">
+                <img class="peek-a-pooh" src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+            </span>
             <br>
             <span class="instruction-text fade-one">              <span class="material-symbols-outlined">
                 music_note
@@ -60,8 +62,9 @@
           </div>
           <div id = "quiz-start-sent-link">
               <h2 class="fade-zero">the details of <span class="sender-name"></span> life</h2>
-              <img class="details" src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
-              <br>
+              <span class="peek-a-pooh-container">
+                  <img class="peek-a-pooh" src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+              </span>              <br>
               <span class="instruction-text fade-one"><span class="material-symbols-outlined">
                   music_note
                   </span>for the full experience, please turn your sound on :)</span>
@@ -89,16 +92,20 @@
                     <input type="text" id="link-to-copy" name="link-to-copy" value="https://tiffanyq.github.io/details/?"  aria-label="Link to send to recipient" readonly>
                 </span>
             </div>
-            <div style="text-align: center; margin-top: 20px" class="fade-three">
+            <div class="end-emojis fade-three">
                 🐝🌸🫶🦋🎉🌿💫
             </div>
           </div>
           <div id = "quiz-end-results">
             <h2 class="fade-zero">check answers</h2>
             <div id="compare-questions"></div>
-            <h2>you got <span id="final-score"><span id="num-correct-answers"></span>/10</span> details of <span class="sender-name"></span> life correct! <3</h2>
-            <img src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
-            <h2 style="text-align: center">🐝🌸🫶🦋🎉🌿💫</h2>
+            <h2>you got <span id="final-score"><span id="num-correct-answers"></span>/10</span> details of <span class="sender-name"></span> life correct!</h2>
+            <span class="peek-a-pooh-container">
+                <img class="peek-a-pooh" src="img/details.png" alt="A Peek A Pooh charm of Winnie the Pooh dressed up as Eeyore, resting on top of a desktop monitor."/>
+            </span>
+            <div class="end-emojis fade-three">
+                🐝🌸🫶🦋🎉🌿💫
+            </div>
           </div>
         </div>
         <div id="outside-quiz">

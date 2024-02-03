@@ -52,6 +52,19 @@
 			}
 };
 
+const q_titles = {
+  q1: "wakeup",
+  q2: "puddle",
+  q3: "coffee",
+  q4: "waiting",
+  q5: "faucet",
+  q6: "reflection",
+  q7: "recipe",
+  q8: "balloon dog",
+  q9: "brushing",
+  q10: "sleep"
+}
+
 const q_descriptions = {
 q1: "<a href='https://tiffanyq.github.io/sunrise/' target='_blank'>good morning</a>. it's a work day! you wake up to your alarm, which was set to:",
 q2: "you put on your rain boots and head for the bus stop. along the way, you approach a shallow puddle.",

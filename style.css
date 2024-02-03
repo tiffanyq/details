@@ -31,12 +31,18 @@ video {
   font-size: 14px;
 }
 
-.details {
-  width: 120px;
+.peek-a-pooh-container {
+display: flex;
+justify-content: center;
+flex-direction: row;
+}
+
+.peek-a-pooh {
+  width: 100px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 30px;
   line-height: 28px;
   font-weight: 400;
 }
@@ -116,6 +122,12 @@ body {
 .sender-name {
   word-break: break-word;
 }
+
+.end-emojis {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /* selection styling */
 .select-row, .compare-row-neutral, .compare-row-correct, .compare-row-incorrect {
   display: inline-block;
@@ -195,6 +207,16 @@ body {
   background-color: #efefef;
   border: 1px solid #787878;
   width: 280px;
+}
+
+#scorecard {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.scorecard-column {
+  width: 140px;
 }
 
 #start-button, #next-button, #enter-name-next-button, #restart-button, #music-button, #credits-button {

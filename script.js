@@ -15,6 +15,9 @@ let fillInForSelf;
 let senderName;
 let answerKey;
 let music;
+let choiceSound;
+let clickSound;
+let buttonSoundsOn = false;
 
 function generateURLToCopy() {
   let tempURL = BASE_URL;
@@ -55,6 +58,15 @@ window.addEventListener("load", function(event) {
   creditsButton.addEventListener('click', showCredits, false);
   document.body.addEventListener('click', closeCredits, true);
   videoBackground.addEventListener("click", createEmoji); // stamping
+
+  // add button sounds
+  startButton.addEventListener('click', makeClickSound, false);
+  nextButton.addEventListener('click', makeClickSound, false);
+  enterNameNextButton.addEventListener('click', makeClickSound, false);
+  restartButton.addEventListener('click', makeClickSound, false);
+  choice0.addEventListener('click', makeChoiceSound, false);
+  choice1.addEventListener('click', makeChoiceSound, false);
+
   const queryString = window.location.search;
   const param = new URLSearchParams(queryString);
   let name = param.get('n');
@@ -78,9 +90,11 @@ window.addEventListener("load", function(event) {
     document.getElementById("quiz-start").style.display = "block"; // get correct start screen
   }
 
-  // music
-  music = new Audio('music.mp3');
+  // music and click
+  music = new Audio('audio/music.mp3');
   music.loop = true;
+  choiceSound = new Audio('audio/choice.mp3');
+  clickSound = new Audio('audio/click.mp3');
 });
 
 /* starts quiz when "next" is selected */
@@ -148,6 +162,8 @@ function advanceFromEnterNameToQuiz() {
   quizPlayArea.style.display = "block";
   changeQuestion();
   hideVisibility(document.getElementById("next-button"));
+  // scroll to top
+  window.scrollTo(0, 0);
 }
 
 function advanceToNextQuestion() {
@@ -167,12 +183,15 @@ function advanceToNextQuestion() {
     }
     hideVisibility(nextButton);
   }
+  // scroll to top
+  window.scrollTo(0, 0);
 }
 
 /* changes question contents: img, descrip, choices */
 function changeQuestion() {
   const img = document.getElementById("q-image");
   const counter = document.getElementById("count-number");
+  const title = document.getElementById("q-title");
   const description = document.getElementById("q-description");
   const choiceLabel = document.getElementById("choice-label");
   const choice0 = document.getElementById("choice0");
@@ -182,6 +201,7 @@ function changeQuestion() {
   // replace the page's displayed content with next question's content
   const questionNumber = "q" + questionCount;
   img.src = "img/"+q_images[questionNumber]['img'];
+  title.innerText = q_titles[questionNumber];
   description.innerHTML = q_descriptions[questionNumber]; // innerHTML for <a> tags
   
   const desiredObject = q_choices[questionNumber];
@@ -286,12 +306,15 @@ function showCompareScreen() {
   for (let i = 0; i < NUM_QUESTIONS; i++) {
     createQuestion(i+1,answerKey[i].toString(), tracking.quizSequence[i].toString());
   }
-  // score the quiz
+  // score the quiz and generate scorecard
   const numCorrectAnswers = document.getElementById("num-correct-answers");
   let score = 0;
   for (let i = 0; i < NUM_QUESTIONS; i++) {
     if (answerKey[i].toString() === tracking.quizSequence[i].toString()) {
+      generateScorecardItem(i, true);
       score++;
+    } else {
+      generateScorecardItem(i, false);
     }
   }
   numCorrectAnswers.innerText = score;
@@ -329,6 +352,9 @@ function restartQuiz() {
   document.querySelectorAll('.self-name').forEach(function(selfName) {
     selfName.innerText = "your";
   });
+
+  // scroll to top
+  window.scrollTo(0, 0);
 }
 
 function convertToBase32(a) {
@@ -426,6 +452,10 @@ function createQuestion(questionNumber, senderAnswer, receiverAnswer) {
   compareQuestions.appendChild(compareQuestionUnit);
 }
 
+function generateScorecardItem(num, correct) {
+
+}
+
 function toggleMusic() {
   const mb = document.getElementById("music-button");
   const mn = mb.querySelectorAll("span")[0];
@@ -444,6 +474,22 @@ function toggleMusic() {
     label.innerText = "turn music on";
     label.classList.remove("music-on");
     music.pause();
+  }
+  // also toggle button sounds
+  buttonSoundsOn = !buttonSoundsOn;
+}
+
+function makeClickSound() {
+  if (buttonSoundsOn) {
+    clickSound.currentTime = 0;
+    clickSound.play();
+  }
+}
+
+function makeChoiceSound() {
+  if (buttonSoundsOn) {
+    choiceSound.currentTime = 0;
+    choiceSound.play();
   }
 }
 
