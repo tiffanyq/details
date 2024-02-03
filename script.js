@@ -1,4 +1,4 @@
-const BASE_URL = "tiffanyq.github.io/details?"
+const BASE_URL = "tiffanyq.github.io/details/?"
 const NUM_QUESTIONS = 10;
 const MIN_EMOJI_SIZE = 10;
 const EMOJI_MULTIPLIER = 28;
