@@ -69,8 +69,8 @@ const q_descriptions = {
 q1: "<a href='https://tiffanyq.github.io/sunrise/' target='_blank'>good morning</a>. it's a work day! you wake up to your alarm, which was set to:",
 q2: "you put on your rain boots and head for the bus stop. along the way, you approach a shallow puddle.",
 q3: "now at work, you brew a cup of coffee to start off the day. you take your first sip:",
-q4: "lunch time! you wait for your friend outside. your phone is in your pocket. it's a remarkably calm day on the road. the hum of passing traffic soothes you, reminds you of <a href='https://www.oceanorlaptopfan.com/' target='_blank'>the ocean</a>. in front of you, a <a href='https://tiffanyq.github.io/thats-enough-touching-grass-for-today/' target='_blank'>grass patch</a> dances. <br><br> as you tilt your gaze upward, you see your friend heading directly toward you. they're still a block away and haven't made eye contact with you yet. it will probably take them another minute to arrive.",
-q5: "you try to wash your hands in the work bathroom, which has an <a href='https://tiffanyq.github.io/automatic-sink/' target='_blank'>automatic faucet</a>. but for some reason, it won't turn on today!",
+q4: "lunch time! you wait for your friend outside. your phone is in your pocket. the road is remarkably calm today. the hum of passing traffic soothes you, reminds you of <a href='https://www.oceanorlaptopfan.com/' target='_blank'>the ocean</a>. in front of you, a <a href='https://tiffanyq.github.io/thats-enough-touching-grass-for-today/' target='_blank'>grass patch</a> dances. <br><br> you tilt your gaze upward and see your friend heading directly toward you. they're still a block away and haven't made eye contact with you yet. it will probably take them another minute to arrive.",
+q5: "the <a href='https://tiffanyq.github.io/automatic-sink/' target='_blank'>automatic faucet</a> in the work bathroom just isn't working today!",
 q6: "on your <a href='https://tiffanyq.github.io/commute/' target='_blank'>commute</a> home, you see your <a href='https://tiffanyq.github.io/smiley/' target='_blank'>reflection</a> in the bus window.",
 q7: "you are making something new for dinner tonight: a pie! you looked at many recipes to prepare for this moment. <a href='https://closethistab.com/' target='_blank'>lots of open tabs</a>! to make this pie, you:",
 q8: "while tidying up the living room after dinner, you notice your toy balloon dog, nobie, sitting on the window ledge. he's watching the <a href='https://tiffanyq.github.io/sunset/' target='_blank'>sunset</a>. that's new. a friend must have taken nobie from the stuffed animal pile in the corner and placed him by the window during board games night.",
@@ -92,10 +92,10 @@ const q_choices = {
 	},
 	q4: {
 		choice0: "take out your phone and check your messages",
-		choice1: "continue to observe your surroundings, including your friend arriving in the distance, until one of you waves hello"
+		choice1: "continue observing your surroundings until you or your friend wave hello"
 	},
 	q5: {
-		choice0: "wave your hands around in the sink basin until the faucet turns on",
+		choice0: "wave your hands around until the faucet turns on",
 		choice1: "immediately try a different sink"
 	},
 	q6: {
@@ -108,7 +108,7 @@ const q_choices = {
 	},
 	q8: {
 		choice0: "put nobie back into the stuffed animal pile",
-		choice1: "nobie will watch the sunset from that ledge every evening from now on"
+		choice1: "nobie is watching every sunset from that ledge from now on"
 	},
 	q9: {
 		choice0: "go on your phone",

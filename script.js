@@ -311,10 +311,10 @@ function showCompareScreen() {
   let score = 0;
   for (let i = 0; i < NUM_QUESTIONS; i++) {
     if (answerKey[i].toString() === tracking.quizSequence[i].toString()) {
-      generateScorecardItem(i, true);
+      generateScorecardItem(i+1, true);
       score++;
     } else {
-      generateScorecardItem(i, false);
+      generateScorecardItem(i+1, false);
     }
   }
   numCorrectAnswers.innerText = score;
@@ -453,7 +453,28 @@ function createQuestion(questionNumber, senderAnswer, receiverAnswer) {
 }
 
 function generateScorecardItem(num, correct) {
-
+  // find the right column
+  const scorecardColumns = document.querySelectorAll(".scorecard-column");
+  const column = num <= 5 ? scorecardColumns[0] : scorecardColumns[1];
+  const lineItem = document.createElement("div");
+  const icon = document.createElement("span");
+  icon.classList.add("material-symbols-outlined")
+  const text = document.createElement("span");
+  if (correct) {
+    lineItem.ariaLabel = "correct answer";
+    icon.classList.add("correct");
+    icon.innerText = "check";
+  } else {
+    lineItem.ariaLabel = "incorrect answer";
+    icon.classList.add("incorrect");
+    icon.innerText = "close";
+    text.classList.add("incorrect");
+  }
+  questionNumber = "q" + num.toString();
+  text.innerText = q_titles[questionNumber];
+  lineItem.appendChild(icon);
+  lineItem.appendChild(text);
+  column.appendChild(lineItem);
 }
 
 function toggleMusic() {
