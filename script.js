@@ -428,16 +428,21 @@ function createQuestion(questionNumber, senderAnswer, receiverAnswer) {
 
 function toggleMusic() {
   const mb = document.getElementById("music-button");
-  const mn = mb.querySelector("span");
+  const mn = mb.querySelectorAll("span")[0];
+  const label = mb.querySelectorAll("span")[1];
   if (mn.innerText === "music_off") {
     mn.innerText = "music_note";
     mn.classList.add("music-on");
     mb.ariaLabel = "turn music off";
+    label.classList.add("music-on");
+    label.innerText = "turn music off";
     music.play();
   } else {
     mn.innerText = "music_off";
     mn.classList.remove("music-on");
     mb.ariaLabel = "turn music on";
+    label.innerText = "turn music on";
+    label.classList.remove("music-on");
     music.pause();
   }
 }
