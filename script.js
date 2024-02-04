@@ -340,18 +340,19 @@ function showCompareScreen() {
 
 // only call if navigator.share true
 function shareLinkMobile() {
-    const urlToShare = generateURLToCopy();
-    if (navigator.share) {
-      navigator.share({
-        title: "guess the details of "+ senderName + "'s life",
-        url: urlToShare
-      })
-      .catch(function(error) {
-        navigator.clipboard.writeText(shareText).then(function() {
-          alert('copied results to clipboard!');
-        });
+  const titleToShare = "guess the details of " + tracking.name + "'s life";
+  const urlToShare = generateURLToCopy();
+  if (navigator.share) {
+    navigator.share({
+      title: titleToShare,
+      url: urlToShare
+    })
+    .catch(function(error) {
+      navigator.clipboard.writeText(shareText).then(function() {
+        alert('copied results to clipboard!');
       });
-    }
+    });
+  }
 }
 
 function copyResultsToClipboard() {
