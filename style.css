@@ -34,7 +34,7 @@ video {
   font-size: 14px;
 }
 
-.peek-a-pooh-container, #share-button-container {
+.peek-a-pooh-container, .share-button-container {
 display: flex;
 justify-content: center;
 flex-direction: row;
@@ -245,12 +245,12 @@ body {
 }
 
 #counter, #quiz-start, #quiz-start-sent-link, #enter-name, #quiz-play, #quiz-end-copy, #quiz-end-results, #quiz-end-make-your-own,
-#enter-name-next-button, #next-button, #restart-button {
+#enter-name-next-button, #next-button, #restart-button, #share-link-button {
   display: none;
 }
 
-#share-button {
-  width: 280px;
+#share-link-button, #share-results-button {
+
   background-color: #4ea568;
   border: 1.6px solid #E8E8E8;
   color: #ffffff;
@@ -258,9 +258,17 @@ body {
   border-radius: 12px;
   cursor: pointer;
   font-size: 22px;
+  margin-top: 20px;
+}
+
+#share-link-button {
+  width: 290px;
+}
+
+#share-results-button {
+  width: 280px;
   margin-left: -8px;
   margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 /* animations */

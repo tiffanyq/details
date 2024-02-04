@@ -46,7 +46,8 @@ window.addEventListener("load", function(event) {
   const musicButton = document.getElementById("music-button");
   const creditsButton = document.getElementById("credits-button");
   const videoBackground = document.getElementById("video-background");
-  const shareButton = document.getElementById("share-button");
+  const shareLinkButton = document.getElementById("share-link-button");
+  const shareResultsButton = document.getElementById("share-results-button");
 
   startButton.addEventListener('click', startQuiz, false);
   nextButton.addEventListener('click', advanceToNextQuestion, false);
@@ -60,7 +61,8 @@ window.addEventListener("load", function(event) {
   creditsButton.addEventListener('click', showCredits, false);
   document.body.addEventListener('click', closeCredits, true);
   videoBackground.addEventListener("click", createEmoji); // stamping
-  shareButton.addEventListener("click", copyResultsToClipboard, false);
+  shareLinkButton.addEventListener("click", shareLinkMobile, false);
+  shareResultsButton.addEventListener("click", copyResultsToClipboard, false);
 
   // add button sounds
   startButton.addEventListener('click', makeClickSound, false);
@@ -292,6 +294,11 @@ function showLinkToCopy() {
   restartButton.style.display = "block";
   // update URL to copy
   linkToCopy.value = generateURLToCopy();
+  // check for share button
+  if (navigator.share) {
+      const shareLinkButton = document.getElementById("share-link-button");
+      shareLinkButton.style.display = "block";
+  }
 }
 
 function showCompareScreen() {
@@ -329,6 +336,22 @@ function showCompareScreen() {
   for (let i = 0; i < NUM_QUESTIONS; i++) {
       shareText += "\n" + generateShareItem(i+1, answerKey[i].toString() === tracking.quizSequence[i].toString());
   }
+}
+
+// only call if navigator.share true
+function shareLinkMobile() {
+    const urlToShare = generateURLToCopy();
+    if (navigator.share) {
+      navigator.share({
+        title: "guess the details of "+ senderName + "'s life",
+        url: urlToShare
+      })
+      .catch(function(error) {
+        navigator.clipboard.writeText(shareText).then(function() {
+          alert('copied results to clipboard!');
+        });
+      });
+    }
 }
 
 function copyResultsToClipboard() {
