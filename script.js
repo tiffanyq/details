@@ -332,9 +332,20 @@ function showCompareScreen() {
 }
 
 function copyResultsToClipboard() {
-  navigator.clipboard.writeText(shareText).then(function() {
-    alert('copied results to clipboard!');
-  });
+  if (navigator.share) {
+    navigator.share({
+      text: shareText
+    })
+    .catch(function(error) {
+      navigator.clipboard.writeText(shareText).then(function() {
+        alert('copied results to clipboard!');
+      });
+    });
+  } else {
+    navigator.clipboard.writeText(shareText).then(function() {
+      alert('copied results to clipboard!');
+    });
+  }
 }
 
 /* restarts quiz when you press the restart button;
