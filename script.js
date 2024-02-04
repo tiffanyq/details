@@ -2,7 +2,7 @@ const BASE_URL = "tiffanyq.github.io/details/?"
 const NUM_QUESTIONS = 10;
 const MIN_EMOJI_SIZE = 10;
 const EMOJI_MULTIPLIER = 28;
-const EMOJIS = ["🐝","🌸","🫶","🦋","🎉","🌿","💫"];
+const EMOJIS = ["🐝","🌸","💘","🦋","🎉","🌿","💫"];
 
 let tracking = {
   name: "",
@@ -90,11 +90,13 @@ window.addEventListener("load", function(event) {
     document.getElementById("quiz-start").style.display = "block"; // get correct start screen
   }
 
-  // music and click
+  // music and click sounds
   music = new Audio('audio/music.mp3');
   music.loop = true;
+  music.volume = 0.3;
   choiceSound = new Audio('audio/choice.mp3');
   clickSound = new Audio('audio/click.mp3');
+  clickSound.volume = 0.3;
 });
 
 /* starts quiz when "next" is selected */
