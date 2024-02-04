@@ -506,6 +506,7 @@ function makeClickSound() {
   if (buttonSoundsOn) {
     clickSound.currentTime = 0;
     clickSound.play();
+    clickSound.pause();
   }
 }
 
@@ -513,6 +514,7 @@ function makeChoiceSound() {
   if (buttonSoundsOn) {
     choiceSound.currentTime = 0;
     choiceSound.play();
+    choiceSound.pause();
   }
 }
 
