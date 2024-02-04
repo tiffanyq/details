@@ -347,7 +347,7 @@ function showCompareScreen() {
 
 // only call if navigator.share true
 function shareLinkMobile() {
-  const titleToShare = "guess the details of " + tracking.name + "'s life";
+  const titleToShare = "guess the details";
   const urlToShare = generateURLToCopyMobile();
   if (navigator.share) {
     navigator.share({
