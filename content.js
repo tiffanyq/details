@@ -55,7 +55,7 @@
 const q_titles = {
   q1: "⏰ wakeup",
   q2: "🌧️ puddle",
-  q3: "☕️ coffee",
+  q3: "🍵 tea",
   q4: "👀 waiting",
   q5: "🚰 faucet",
   q6: "🚌 reflection",
@@ -68,7 +68,7 @@ const q_titles = {
 const q_descriptions = {
 q1: "<a href='https://tiffanyq.github.io/sunrise/' target='_blank'>good morning</a>. it's a work day! you wake up to your alarm, which was set to:",
 q2: "you put on your rain boots and head for the bus stop. along the way, you approach a shallow puddle.",
-q3: "now at work, you brew a cup of coffee to start off the day. you take your first sip:",
+q3: "now at work, you brew a cup of tea to start off the day. you take your first sip:",
 q4: "lunch time! you wait for your friend outside. your phone is in your pocket. the road is remarkably calm today. the hum of passing traffic soothes you, reminds you of <a href='https://www.oceanorlaptopfan.com/' target='_blank'>the ocean</a>. in front of you, a <a href='https://tiffanyq.github.io/thats-enough-touching-grass-for-today/' target='_blank'>grass patch</a> dances. <br><br> you tilt your gaze upward and see your friend heading directly toward you. they're still a block away and haven't made eye contact with you yet. it will probably take them another minute to arrive.",
 q5: "the <a href='https://tiffanyq.github.io/automatic-sink/' target='_blank'>automatic faucet</a> in the work bathroom just isn't working today!",
 q6: "on your <a href='https://tiffanyq.github.io/commute/' target='_blank'>commute</a> home, you see your <a href='https://tiffanyq.github.io/smiley/' target='_blank'>reflection</a> in the bus window.",

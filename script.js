@@ -2,7 +2,7 @@ const BASE_URL = "tiffanyq.github.io/details/?"
 const NUM_QUESTIONS = 10;
 const MIN_EMOJI_SIZE = 10;
 const EMOJI_MULTIPLIER = 28;
-const EMOJIS = ["🐝","🌸","💘","🦋","🎉","🌿","💫"];
+const EMOJIS = ["⏰","🌧️","🍵","👀","🚰","🚌","🥧","🧸","📱","🛌"];
 
 let tracking = {
   name: "",
@@ -18,6 +18,7 @@ let music;
 let choiceSound;
 let clickSound;
 let buttonSoundsOn = false;
+let shareText;
 
 function generateURLToCopy() {
   let tempURL = BASE_URL;
@@ -45,6 +46,7 @@ window.addEventListener("load", function(event) {
   const musicButton = document.getElementById("music-button");
   const creditsButton = document.getElementById("credits-button");
   const videoBackground = document.getElementById("video-background");
+  const shareButton = document.getElementById("share-button");
 
   startButton.addEventListener('click', startQuiz, false);
   nextButton.addEventListener('click', advanceToNextQuestion, false);
@@ -58,6 +60,7 @@ window.addEventListener("load", function(event) {
   creditsButton.addEventListener('click', showCredits, false);
   document.body.addEventListener('click', closeCredits, true);
   videoBackground.addEventListener("click", createEmoji); // stamping
+  shareButton.addEventListener("click", copyResultsToClipboard, false);
 
   // add button sounds
   startButton.addEventListener('click', makeClickSound, false);
@@ -304,6 +307,8 @@ function showCompareScreen() {
   restartButton.style.display = "block";
   restartButton.innerHTML= "<span>make your own</span>";
 
+  let emojiScore = "";
+
   // populate comparison screen with answers
   for (let i = 0; i < NUM_QUESTIONS; i++) {
     createQuestion(i+1,answerKey[i].toString(), tracking.quizSequence[i].toString());
@@ -313,13 +318,25 @@ function showCompareScreen() {
   let score = 0;
   for (let i = 0; i < NUM_QUESTIONS; i++) {
     if (answerKey[i].toString() === tracking.quizSequence[i].toString()) {
-      generateScorecardItem(i+1, true);
+      emojiScore += "✅";
       score++;
     } else {
-      generateScorecardItem(i+1, false);
+      emojiScore += "⬜️";
     }
   }
+  const emojiScorecard = document.getElementById("emoji-scorecard");
+  emojiScorecard.innerText = emojiScore;
   numCorrectAnswers.innerText = score;
+  shareText = "the details of " + senderName + "'s life: " + score.toString() + "/10\n" ;
+  for (let i = 0; i < NUM_QUESTIONS; i++) {
+      shareText += "\n" + generateShareItem(i+1, answerKey[i].toString() === tracking.quizSequence[i].toString());
+  }
+}
+
+function copyResultsToClipboard() {
+  navigator.clipboard.writeText(shareText).then(function() {
+    alert('copied results to clipboard!');
+  });
 }
 
 /* restarts quiz when you press the restart button;
@@ -454,6 +471,7 @@ function createQuestion(questionNumber, senderAnswer, receiverAnswer) {
   compareQuestions.appendChild(compareQuestionUnit);
 }
 
+// currently not in use
 function generateScorecardItem(num, correct) {
   // find the right column
   const scorecardColumns = document.querySelectorAll(".scorecard-column");
@@ -477,6 +495,12 @@ function generateScorecardItem(num, correct) {
   lineItem.appendChild(icon);
   lineItem.appendChild(text);
   column.appendChild(lineItem);
+}
+
+function generateShareItem(num, correct) {
+  const firstEmoji = correct ? "✅" : "⬜️";
+  questionNumber = "q" + num.toString();
+  return firstEmoji + q_titles[questionNumber];
 }
 
 function toggleMusic() {
