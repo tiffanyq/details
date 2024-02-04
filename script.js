@@ -96,10 +96,8 @@ window.addEventListener("load", function(event) {
   // music and click sounds
   music = new Audio('audio/music.mp3');
   music.loop = true;
-  music.volume = 0.3;
   choiceSound = new Audio('audio/choice.mp3');
   clickSound = new Audio('audio/click.mp3');
-  clickSound.volume = 0.2;
 });
 
 /* starts quiz when "next" is selected */
