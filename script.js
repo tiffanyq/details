@@ -29,6 +29,13 @@ function generateURLToCopy() {
     convertToBase32(tracking.quizSequence);
 }
 
+function generateURLToCopyMobile() {
+  return "?n=" +
+  encodeURIComponent(tracking.name) +
+  "#" +
+  convertToBase32(tracking.quizSequence);
+}
+
 function selectUrl() {
   const urlToCopy = document.getElementById("link-to-copy");
   urlToCopy.select();
@@ -341,7 +348,7 @@ function showCompareScreen() {
 // only call if navigator.share true
 function shareLinkMobile() {
   const titleToShare = "guess the details of " + tracking.name + "'s life";
-  const urlToShare = generateURLToCopy();
+  const urlToShare = generateURLToCopyMobile();
   if (navigator.share) {
     navigator.share({
       title: titleToShare,
