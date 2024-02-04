@@ -504,17 +504,15 @@ function toggleMusic() {
 
 function makeClickSound() {
   if (buttonSoundsOn) {
-    clickSound.currentTime = 0;
     clickSound.play();
-    clickSound.pause();
+    clickSound.currentTime = 0;
   }
 }
 
 function makeChoiceSound() {
   if (buttonSoundsOn) {
-    choiceSound.currentTime = 0;
     choiceSound.play();
-    choiceSound.pause();
+    choiceSound.currentTime = 0;
   }
 }
 

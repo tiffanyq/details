@@ -53,16 +53,16 @@
 };
 
 const q_titles = {
-  q1: "wakeup",
-  q2: "puddle",
-  q3: "coffee",
-  q4: "waiting",
-  q5: "faucet",
-  q6: "reflection",
-  q7: "recipe",
-  q8: "balloon dog",
-  q9: "brushing",
-  q10: "sleep"
+  q1: "⏰ wakeup",
+  q2: "🌧️ puddle",
+  q3: "☕️ coffee",
+  q4: "👀 waiting",
+  q5: "🚰 faucet",
+  q6: "🚌 reflection",
+  q7: "🥧 recipe",
+  q8: "🧸 balloon dog",
+  q9: "📱 brushing",
+  q10: "🛌 sleep"
 }
 
 const q_descriptions = {
