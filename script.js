@@ -25,14 +25,14 @@ function generateURLToCopy() {
   return tempURL +
     "n=" +
     encodeURIComponent(tracking.name) +
-    "#" +
+    "&a=" +
     convertToBase32(tracking.quizSequence);
 }
 
 function generateURLToCopyMobile() {
   return "?n=" +
   encodeURIComponent(tracking.name) +
-  "#" +
+  "&a=" +
   convertToBase32(tracking.quizSequence);
 }
 
@@ -82,7 +82,10 @@ window.addEventListener("load", function(event) {
   const queryString = window.location.search;
   const param = new URLSearchParams(queryString);
   let name = param.get('n');
-  answerKey = window.location.hash.substring(1);
+  answerKey = param.get('a');
+  if (!answerKey) {
+    answerKey = window.location.hash.substring(1);
+  }
   if (name && answerKey) {
     fillInForSelf = false;
     answerKey = convertToBase2(answerKey).toString();
