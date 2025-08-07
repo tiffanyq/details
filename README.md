@@ -1,5 +1,5 @@
 # details
-tiffanyq.github.io/details
+[tiffanyq.github.io/details](https://tiffanyq.github.io/details/)
 
 observation as love // valentines day 2024
 
