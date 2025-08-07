@@ -1,4 +1,6 @@
 # details
+tiffanyq.github.io/details
+
 observation as love // valentines day 2024
 
 2020: sendit
